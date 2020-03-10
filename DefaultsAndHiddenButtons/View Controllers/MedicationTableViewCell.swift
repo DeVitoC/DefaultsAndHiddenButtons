@@ -11,7 +11,11 @@ import UIKit
 class MedicationTableViewCell: UITableViewCell {
 
     // MARK: - Properties
-    
+    var medication: Medication? {
+        didSet {
+            updateViews()
+        }
+    }
     
     // MARK: - IBOutlets
     @IBOutlet var medicationLabel: UILabel!
@@ -22,4 +26,9 @@ class MedicationTableViewCell: UITableViewCell {
     @IBAction func medicationGivenButtonTapped(_ sender: Any) {
     }
     
+    
+    func updateViews() {
+        medicationLabel.text = medication?.name
+        
+    }
 }

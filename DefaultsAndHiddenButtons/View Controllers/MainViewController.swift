@@ -13,17 +13,17 @@ class MainViewController: UIViewController {
     // MARK: - Properties
     let residentController = ResidentController.residentController
     
-    var residents: [Resident] = [] {
-        didSet {
-            //filterResidents()
-        }
-    }
+//    var residents: [Resident] = [] {
+//        didSet {
+//            //filterResidents()
+//        }
+//    }
     
-    var residentTableViewController: RedsidentsTableViewController? {
+    var residentTableViewController: RedsidentsTableViewController? /*{
         didSet {
             residentTableViewController?.residents = residents
         }
-    }
+    }*/
     
     // MARK: - IBOutlets
     @IBOutlet var searchTextField: UITextField!
@@ -46,7 +46,7 @@ class MainViewController: UIViewController {
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "MedicationTableViewSegue" {
+        if segue.identifier == "ResidentsTableViewSegue" {
             guard let residentTableVC = segue.destination as? RedsidentsTableViewController else { return }
             residentTableViewController = residentTableVC
         }

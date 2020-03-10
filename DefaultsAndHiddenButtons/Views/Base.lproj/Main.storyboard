@@ -37,7 +37,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DQ2-J0-eZm">
                                 <rect key="frame" x="0.0" y="138" width="414" height="724"/>
                                 <connections>
-                                    <segue destination="cGF-yt-yE2" kind="embed" identifier="MedicationTableViewSegue" id="DDf-H6-NUo"/>
+                                    <segue destination="cGF-yt-yE2" kind="embed" identifier="ResidentsTableViewSegue" id="DDf-H6-NUo"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -95,7 +95,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="egN-Rx-pIw" kind="show" id="XLf-er-dOu"/>
+                                    <segue destination="egN-Rx-pIw" kind="show" identifier="MedicationTableViewSegue" id="XLf-er-dOu"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -128,7 +128,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="71" id="4Oe-T2-b9d" customClass="MedicationTableViewCell" customModule="DefaultsAndHiddenButtons" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MedicationCell" rowHeight="71" id="4Oe-T2-b9d" customClass="MedicationTableViewCell" customModule="DefaultsAndHiddenButtons" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="71"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4Oe-T2-b9d" id="sdc-Qm-pMe">

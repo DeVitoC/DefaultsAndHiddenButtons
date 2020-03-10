@@ -11,7 +11,7 @@ import UIKit
 class RedsidentsTableViewController: UITableViewController {
     
     // MARK: - Properties
-    var residents: [Resident] = []
+    var residentController = ResidentController.residentController
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,11 +20,13 @@ class RedsidentsTableViewController: UITableViewController {
 
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        let residents = residentController.residents
         return residents.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ResidentCell", for: indexPath)
+        let residents = residentController.residents
         let resident = residents[indexPath.row]
         guard let medications = resident.medications else { return UITableViewCell() }
         cell.textLabel?.text = resident.name
@@ -41,14 +43,14 @@ class RedsidentsTableViewController: UITableViewController {
 //    }
 
 
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "MedicationTableViewSegue" {
+            guard let medicationsTVC = segue.destination as? MedicationsTableViewController, let index = tableView.indexPathForSelectedRow else { return }
+            let resident = residentController.residents[index.row]
+            medicationsTVC.resident = resident
+        }
     }
-    */
 
 }

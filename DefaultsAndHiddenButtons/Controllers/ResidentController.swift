@@ -11,7 +11,7 @@ import Foundation
 class ResidentController {
     
     // MARK: - Properties
-    var residents: [Resident] = []
+    var residents: [Resident] = [Resident(name: "First", roomNumber: 1, medications: [Medication(name: "A Medication", takeInterval: 1)])]
     static var residentController = ResidentController()
     
     // MARK: - CRUD
